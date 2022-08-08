@@ -18,7 +18,7 @@ default_args = {
     "start_date": airflow.utils.dates.days_ago(1)
 
 }
-info = {'key': 'Anand'}
+info = {'key': dag_run.conf['key']}
 
 
 with DAG(
