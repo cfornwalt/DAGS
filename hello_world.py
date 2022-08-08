@@ -9,7 +9,7 @@ def first_function_execute():
 
 # passing parameter in DAG
 def second_function_execute(**kwargs):
-    var = kwargs.get('key', "there!")  # if failed to get the value set 'there!' as default
+    var = kwargs["params"].get('key', "there!")  # if failed to get the value set 'there!' as default
     return f'Hello {var}'
 
 
@@ -18,7 +18,7 @@ default_args = {
     "start_date": airflow.utils.dates.days_ago(1)
 
 }
-info = {'key': dag_run.conf['key']}
+info = {'key': 'Anand'}
 
 
 with DAG(
